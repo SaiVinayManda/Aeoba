@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { PageHero, PageSection } from "@/components/aeoba/PageSections";
+export default function NotFound() { return <><PageHero eyebrow="404 · Aeoba" title="This page is not in the answer set." description="Use the navigation above or choose a working destination below." actions={false} /><PageSection><div className="native-actions"><Link className="btn-primary" href="/">Aeoba home</Link><Link className="btn-secondary-strong" href="/platform">Explore the platform</Link><Link className="btn-secondary-strong" href="/resources">Browse resources</Link></div></PageSection></>; }

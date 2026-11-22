@@ -1,0 +1,5 @@
+import { CallToAction, ContentCard, PageHero, PageSection } from "@/components/aeoba/PageSections";
+import { playbooks } from "@/content/resources";
+import { pageMetadata } from "@/lib/metadata";
+export const metadata = pageMetadata("Implementation Case Studies", "Inspect illustrative Aeoba implementation studies with a clear scope, process, and evidence requirements.", "/case-studies");
+export default function CaseStudiesPage() { return <><PageHero eyebrow="Aeoba implementation studies" title="See the work. Know what would count as proof." description="These are demonstration projects showing Aeoba's implementation method. They are not client testimonials, live campaign results, or claims of achieved performance." /><PageSection title="Explore a complete implementation outline"><div className="native-grid">{playbooks.map((playbook, index) => <ContentCard key={playbook.slug} href={`/case-studies/${playbook.slug}`} title={playbook.title} description={playbook.description} label={playbook.sector} index={index} />)}</div></PageSection><CallToAction /></>; }

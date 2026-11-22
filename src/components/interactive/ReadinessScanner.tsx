@@ -1,0 +1,18 @@
+"use client";
+
+import Link from "next/link";
+import { useState, type FormEvent } from "react";
+import { Check, CircleAlert, Download } from "lucide-react";
+import type { ReadinessResult } from "@/lib/readiness-types";
+import { downloadFile } from "@/components/interactive/Workbenches";
+
+export function ReadinessResults({ result }: { result: ReadinessResult }) {
+  const passed = result.checks.filter(check => check.passed).length;
+  return <div><p className="eyebrow">Fetched homepage snapshot</p><h3>{passed} of {result.checks.length} technical checks passed</h3><p className="native-note">{result.url}<br />Fetched {new Date(result.fetchedAt).toLocaleString("en-GB")}. This checks the returned HTML, not live AI answers or your entire website.</p><div className="scan-checks">{result.checks.map(check => <div className="scan-check" key={check.id}>{check.passed ? <Check size={18} /> : <CircleAlert size={18} />}<div><strong>{check.label} · {check.passed ? "Found" : "Review"}</strong><p>{check.detail}</p></div></div>)}</div><p className="native-note">Detected JSON-LD types: {result.schemaTypes.join(", ") || "none"}. JavaScript-only markup, robots.txt, HTTP indexing headers, and actual engine citations require separate checks.</p><div className="workbench-actions"><button className="btn-secondary-strong" onClick={() => downloadFile("aeoba-homepage-readiness.json", JSON.stringify(result, null, 2), "application/json")}><Download size={16} />Download findings</button><Link className="btn-primary" href="/free-aeo-report">Run Your Free AEO Report</Link></div></div>;
+}
+
+export function ReadinessScanner({ initialUrl = "", geo = false }: { initialUrl?: string; geo?: boolean }) {
+  const [url, setUrl] = useState(initialUrl), [result, setResult] = useState<ReadinessResult | null>(null), [busy, setBusy] = useState(false), [error, setError] = useState("");
+  const scan = async (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); setBusy(true); setError(""); setResult(null); try { const response = await fetch("/api/readiness", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ url }), signal: AbortSignal.timeout(18000) }); const data = await response.json() as ReadinessResult | { error: string }; if (!response.ok || "error" in data) throw new Error("error" in data ? data.error : "The check could not be completed."); setResult(data); } catch (failure) { setError(failure instanceof Error ? failure.message : "The website could not be reached."); } finally { setBusy(false); } };
+  return <div className="workbench"><div className="workbench-heading"><div><p className="eyebrow">{geo ? "GEO technical baseline" : "AI visibility readiness"}</p><h2>Check the facts your homepage exposes.</h2></div><span className="native-badge">Actual HTML checks · no invented AI ranking</span></div><form className="native-form" onSubmit={scan}><label>Public website URL<input name="url" type="url" inputMode="url" required maxLength={2000} value={url} onChange={event => setUrl(event.target.value)} placeholder="https://your-website.com" /></label><button className="btn-primary" disabled={busy}>{busy ? "Fetching and checking the page…" : "Check homepage readiness"}</button>{error && <p className="form-error" role="alert">{error} <Link className="native-text-link" href="/free-aeo-report">Request a manual report →</Link></p>}</form>{result ? <div className="scan-result" aria-live="polite"><ReadinessResults result={result} /></div> : <p className="native-note">We fetch one public page and inspect titles, headings, canonical URLs, indexing meta tags, and JSON-LD. We do not query ChatGPT or Perplexity from this tool. Pages that block automated requests may need a manual audit.</p>}</div>;
+}

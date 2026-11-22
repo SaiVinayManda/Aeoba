@@ -1,0 +1,19 @@
+{
+  "pages": 68,
+  "distinctNativeDestinations": 70,
+  "internalLinksAndSections": 160,
+  "aliases": 24,
+  "assets": 19,
+  "publicReadinessFetch": "not requested",
+  "verified": [
+    "page identity and metadata",
+    "organization schema",
+    "internal links and section anchors",
+    "JavaScript, stylesheet, and font assets",
+    "404 behavior",
+    "request persistence and validation",
+    "cross-origin rejection",
+    "private network scan rejection",
+    "portal login, cookie, protected data, tampering, and logout"
+  ]
+}
