@@ -20,7 +20,7 @@ export function validateSubmission(input: unknown): Omit<AeobaRequest, "id" | "c
   const prompts = Array.isArray(data.prompts) ? data.prompts.slice(0, 2).map(value => text(value, 500)).filter(Boolean) : [];
   const message = text(data.message, 4000), name = text(data.name, 120), plan = text(data.plan, 30);
   if (kind === "report" && (!website || !prompts.length)) throw new Error("Add your website and at least one buyer prompt.");
-  if ((kind === "contact" || kind === "career") && message.length < 10) throw new Error("Add a short message so Sai can understand your enquiry.");
+  if ((kind === "contact" || kind === "career") && message.length < 10) throw new Error("Add a short message so Aeoba can understand your enquiry.");
   if (kind === "onboarding" && !["growth", "scale", "enterprise"].includes(plan)) throw new Error("Choose a valid plan.");
   return { kind, email, name, website, prompts, message, plan };
 }

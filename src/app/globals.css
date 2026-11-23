@@ -112,8 +112,7 @@
 :is(.home-citation-card, .aeo-plan, .aeo-proofCard, .buyer-tabs button, .btn-primary, .btn-secondary-strong, .header-cta, .dropdown-link) { transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease; }
 .aeo-section :is(.aeo-plan, .aeo-proofCard):hover { border-color: var(--primary); box-shadow: 0 8px 32px var(--glow); }
 :is(.text-metric, .home-citation-stat, .aeo-proofStats, .aeo-guaranteeClaim, .aeo-researchNumber, .aeo-planPrice, .buyer-stats, .aeo-stepNumber) { font-variant-numeric: tabular-nums; }
-.aeo-founder { padding: 20px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--glass); backdrop-filter: blur(12px); }
 [id] { scroll-margin-top: 96px; }
 /* Keep the supplied booking popup clear of the existing page controls. */
-.back-to-top { bottom: 104px; }
+body:has(.floating-booking) .back-to-top { bottom: 88px; }
 body:has(.cookie-banner) .floating-booking { display: none; }

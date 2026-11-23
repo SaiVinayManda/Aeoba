@@ -8,7 +8,7 @@ import { site } from "@/config/site";
 const scenarios = {
   "B2B SaaS": { question: "How can a SaaS business become easier for AI to recommend?", answer: "Clarify the category, product entities, integrations, and comparison criteria. Aeoba connects those facts with useful answer pages and a repeatable citation baseline.", href: "/industries/saas" },
   Ecommerce: { question: "What makes a product useful as a source in AI answers?", answer: "Specific product facts, original buying advice, and clear suitability criteria give an answer something useful to reference. Aeoba organizes the evidence and the path to the product.", href: "/industries/ecommerce" },
-  "Consulting & Agencies": { question: "How should a professional services business explain its expertise?", answer: "Make the service scope, founder expertise, locations, and consultation process consistent. Aeoba structures those facts and tracks the buyer questions they are intended to support.", href: "/industries/local-business-seo" },
+  "Consulting & Agencies": { question: "How should a professional services business explain its expertise?", answer: "Make the service scope, agency expertise, locations, and consultation process consistent. Aeoba structures those facts and tracks the buyer questions they are intended to support.", href: "/industries/local-business-seo" },
 };
 
 export function CitationPreview() {

@@ -1,6 +1,9 @@
-export interface ArticleSection { heading: string; paragraphs: string[]; bullets?: string[] }
-export interface Article { slug: string; title: string; category: string; summary: string; minutes: number; sections: ArticleSection[] }
-export const articles: Article[] = [
+import { finishArticle, type Article } from "./article-types";
+import { researchArticles } from "./research-articles";
+
+export type { Article, ArticleSection } from "./article-types";
+
+const fieldNotes: Pick<Article, "slug" | "title" | "category" | "summary" | "minutes" | "sections">[] = [
   { slug: "build-a-buyer-intent-prompt-map", title: "Build a buyer-intent prompt map before publishing another page", category: "Strategy", summary: "A practical way to connect customer questions, commercial pages, and the evidence an AI answer would need.", minutes: 6, sections: [
     { heading: "Start with a decision, not a keyword list", paragraphs: ["Write down the decisions a qualified buyer makes before contacting you. Someone choosing a supplier may ask about capability, integration effort, price, alternatives, or location. Those questions have different evidence requirements. Grouping them into one broad topic produces vague content and an equally vague measurement plan.", "Use sales conversations, support questions, and your own subject-matter expertise to draft the first list. Preserve the wording your customers use. Add the audience, decision stage, and relevant product or service beside each question."] },
     { heading: "Choose prompts you can actually answer", paragraphs: ["A useful prompt has a clear connection to your offer and enough specificity to distinguish a useful answer from a generic recommendation. Include comparison, suitability, implementation, and commercial questions. Avoid padding the set with variations that ask for the same answer.", "For each prompt, identify the page that should resolve the question. If no suitable page exists, record an evidence gap before commissioning a draft."], bullets: ["Who is the buyer and what decision are they making?", "Which visible facts support your answer?", "Which page should own the topic?", "What useful next step should the reader take?"] },
@@ -25,6 +28,72 @@ export const articles: Article[] = [
     { heading: "Measure relevance before volume", paragraphs: ["Track what the reference helps a buyer understand. Record the publication, audience, subject, relationship, and source URL. Keep earned editorial coverage separate from owned profiles and paid distribution.", "An AI model may or may not cite a particular source. The useful claim is that the reference exists and contributes relevant evidence; an observed citation requires a separate engine check."] },
     { heading: "Feed the learning back into your site", paragraphs: ["Questions and objections from an editorial conversation can reveal missing explanations on your own pages. Use those observations to improve your answer library, comparisons, and documentation. Authority work and content work should reinforce the same clear account of your expertise."] },
   ] },
+];
+
+const fieldNoteDetails: Record<string, Pick<Article, "hook" | "keywords" | "faq"> & { service: string; serviceLabel: string }> = {
+  "build-a-buyer-intent-prompt-map": {
+    hook: "Your next article may answer a question no qualified buyer is asking. A prompt map exposes that mismatch before you spend another week writing.",
+    keywords: ["buyer intent prompts", "B2B AEO content strategy"],
+    service: "/services/managed-aeo", serviceLabel: "Managed AEO + SEO",
+    faq: [
+      { question: "How many buyer prompts should we start with?", answer: "Choose a manageable panel covering distinct, valuable decisions. Start small enough to repeat checks and keep the evidence, then expand deliberately when a new question has a clear purpose." },
+      { question: "Should every prompt have its own page?", answer: "No. Related questions may belong on one useful page. Assign a primary URL to each decision and create a new page only when it resolves a distinct information need." },
+      { question: "How often should we update the map?", answer: "Review priorities weekly while keeping the baseline wording stable. Record changes to prompts and cohorts so later reports remain comparable." }
+    ]
+  },
+  "schema-without-contradictions": {
+    hook: "Perfectly valid JSON-LD can still describe the wrong business. One copied company name or outdated contact field can undermine the consistency your schema was meant to create.",
+    keywords: ["AEO schema markup", "entity consistency", "Organization structured data"],
+    service: "/services/technical-aeo", serviceLabel: "Technical AEO",
+    faq: [
+      { question: "Does valid schema guarantee a citation?", answer: "No. Syntax and vocabulary checks establish implementation quality. The page still needs useful, accurate evidence, and engine citations require separate observation." },
+      { question: "Which facts should we reconcile first?", answer: "Start with the brand name, canonical domain, public email, locations, and service scope. Compare the shared configuration, rendered pages, and JSON-LD." },
+      { question: "When should structured data be reviewed?", answer: "Review it when business facts, templates, services, or content dates change. Include representative public URLs in release checks." }
+    ]
+  },
+  "measure-citations-with-evidence": {
+    hook: "A dashboard says your AI visibility rose, but nobody can open the answer or its cited source. Without those records, the team cannot tell a real change from a reporting artifact.",
+    keywords: ["AI citation measurement", "LLM visibility reporting"],
+    service: "/services/ai-search-analytics", serviceLabel: "AI Search Analytics",
+    faq: [
+      { question: "Is a mention the same as a citation?", answer: "No. A mention names the brand; a citation provides an inspectable source reference. Record each separately, alongside whether the answer makes a relevant recommendation." },
+      { question: "What should an observation contain?", answer: "Save the exact prompt, engine or product, date, available context, answer excerpt, source URLs, and result status. Keep technical failures separate from completed checks." },
+      { question: "Can citations be counted as pipeline?", answer: "No. A citation is an observed answer event. Qualified opportunities need your commercial criteria and their own records, with attribution evidence preserved where available." }
+    ]
+  },
+  "authority-without-manufactured-endorsements": {
+    hook: "A hundred mentions can add less buying evidence than one detailed, independent comparison. The difference is whether the reference helps a real prospect evaluate your offer.",
+    keywords: ["AEO authority building", "off-site citation evidence", "digital PR for AI search"],
+    service: "/services/authority-community-mentions", serviceLabel: "authority and community services",
+    faq: [
+      { question: "What makes an external reference useful?", answer: "It should reach a relevant audience and provide specific, accurate evidence about a buying decision. Record its source, context, and relationship to the brand." },
+      { question: "Can paid coverage be an independent endorsement?", answer: "A commercial placement should be disclosed and recorded as paid distribution. Keep it distinct from independent editorial recommendations." },
+      { question: "How do we know a reference supports AI visibility?", answer: "First verify that the reference exists and is relevant. Count an AI citation only when a documented engine check actually returns that source." }
+    ]
+  }
+};
+
+// Keep the existing audio field-note collection independent of blog expansion.
+export const podcastArticles = fieldNotes;
+
+export const articles: Article[] = [
+  ...fieldNotes.map(article => {
+    const details = fieldNoteDetails[article.slug];
+    return finishArticle({
+      ...article,
+      hook: details.hook,
+      keywords: details.keywords,
+      faq: details.faq,
+      publishedAt: "2026-11-22",
+      modifiedAt: "2026-11-23",
+      sections: [...article.sections, {
+        heading: "Put the framework to work",
+        paragraphs: [`Use Aeoba's [${details.serviceLabel}](${details.service}) to connect this framework to a scoped execution program. Start with the [Free AEO Report](/free-aeo-report) to identify the buyer questions and evidence gaps that deserve attention first.`],
+        subsections: [{ heading: "Your first action", paragraphs: ["Choose one commercial question, assign its primary page, and record the evidence you have today. Agree on the next improvement and a date to review what changed."] }]
+      }]
+    });
+  }),
+  ...researchArticles
 ];
 
 export const glossary = [
@@ -60,5 +129,5 @@ export interface Playbook { slug: string; title: string; sector: string; descrip
 export const playbooks: Playbook[] = [
   { slug: "saas-citation-architecture", title: "A citation architecture for B2B SaaS", sector: "B2B SaaS", description: "An illustrative implementation showing how use cases, integrations, and comparison pages can support buyer questions.", challenge: "A software buyer needs specific answers about fit, integrations, implementation, and alternatives. A generic product overview leaves those decisions unresolved.", work: ["Map evaluation prompts to commercial pages", "Reconcile product, company, and integration entities", "Write answer-first comparison and implementation briefs", "Record repeat observations with the sources attached"], evidence: ["A reviewed prompt-to-page map", "Consistent page and organization identifiers", "A dated technical validation record", "Observed citations recorded only after actual checks"], prompt: "Which software fits our workflow and integrates with the tools we already use?" },
   { slug: "ecommerce-answer-library", title: "An answer library for considered purchases", sector: "Ecommerce", description: "An illustrative product discovery workflow built around suitability, buying criteria, and clear product facts.", challenge: "A shopper comparing a considered purchase needs practical distinctions. Category copy that repeats product names does not explain which option fits a particular need.", work: ["Group product questions by suitability and comparison intent", "Reconcile category and product attributes", "Create useful buying-guide and FAQ briefs", "Connect guides with relevant products and clear policies"], evidence: ["A product fact and evidence inventory", "Descriptive contextual internal links", "Visible answers synchronized with structured data", "A buyer-question review before publication"], prompt: "What should I compare before choosing the right product for this use case?" },
-  { slug: "professional-services-entity-baseline", title: "An entity baseline for professional services", sector: "Professional services", description: "An illustrative workflow for consistent services, locations, expertise, and consultation paths.", challenge: "A prospective client needs to understand what a firm does, where it operates, and who owns the work. Inconsistent business facts make that decision harder.", work: ["Reconcile organization, founder, and service facts", "Create specific service and location answer structures", "Add schema grounded in visible content", "Track a stable set of local and specialist prompts"], evidence: ["A canonical organization fact sheet", "Service scope and qualification criteria", "A clear consultation journey", "A dated prompt and source log"], prompt: "Who offers the expertise I need, and what will working together involve?" },
+  { slug: "professional-services-entity-baseline", title: "An entity baseline for professional services", sector: "Professional services", description: "An illustrative workflow for consistent services, locations, expertise, and consultation paths.", challenge: "A prospective client needs to understand what a firm does, where it operates, and who owns the work. Inconsistent business facts make that decision harder.", work: ["Reconcile organization, location, and service facts", "Create specific service and location answer structures", "Add schema grounded in visible content", "Track a stable set of local and specialist prompts"], evidence: ["A canonical organization fact sheet", "Service scope and qualification criteria", "A clear consultation journey", "A dated prompt and source log"], prompt: "Who offers the expertise I need, and what will working together involve?" },
 ];

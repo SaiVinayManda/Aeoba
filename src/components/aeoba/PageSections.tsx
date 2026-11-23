@@ -23,10 +23,6 @@ export function Deliverables({ items }: { items: readonly string[] }) {
   return <ul className="native-deliverables">{items.map(item => <li key={item}><Check size={18} /><span>{item}</span></li>)}</ul>;
 }
 
-export function FounderNote() {
-  return <div className="founder-note"><span className="native-badge">Founder-led · Milan & Malta</span><h3>You work directly with {site.founder.name}.</h3><p>{site.founder.expertise}. Sai builds the systems, reviews the work, and owns the weekly citation tracking. Your account stays with the person responsible for the architecture.</p><Link href="/about" className="native-text-link">Meet your founder →</Link></div>;
-}
-
 export function CallToAction() {
   return <section className="native-section native-cta"><div className="native-container"><p className="eyebrow">Your next step</p><h2>Find the gap between your expertise and your AI visibility.</h2><p>Start with your website and the questions you want to be recommended for. Build the program around evidence.</p><div className="native-actions"><Link className="btn-primary" href="/free-aeo-report">Run Your Free AEO Report</Link><CalPopupButton className="btn-secondary-strong">Book a Strategy Call</CalPopupButton></div></div></section>;
 }

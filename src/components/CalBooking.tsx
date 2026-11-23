@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Script from "next/script";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import type { ComponentProps } from "react";
@@ -51,35 +50,16 @@ export function BookingLink(props: Omit<ComponentProps<typeof Link>, "href">) {
 
 // ─── Mode 1: Floating bottom-right popup button ───────────────────────────────
 // Replaces the old <BookingLink className="floating-booking"> nav link.
-// The Cal floating button is injected via script; this component only loads the
-// script and hides itself on the /book-call page.
+// Reuse the same modal trigger as the header, with Aeoba's own button styling.
 export function FloatingBookingLink() {
   const pathname = usePathname();
   if (pathname === bookingUrl) return null;
 
-  const floatingEmbed = `(function (C, A, L) {
-    let p = function (a, ar) { a.q.push(ar); };
-    let d = C.document;
-    C.Cal = C.Cal || function () {
-      let cal = C.Cal; let ar = arguments;
-      if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; }
-      if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; }
-      p(cal, ar);
-    };
-  })(window, "${site.booking.scriptUrl}", "init");
-  Cal("init", "${site.booking.namespace}", { origin: "${site.booking.origin}" });
-  Cal.config = Cal.config || {};
-  Cal.config.forwardQueryParams = true;
-  Cal.ns["${site.booking.namespace}"]("floatingButton", {
-    calLink: "${site.booking.calLink}",
-    config: { layout: "${site.booking.layout}", useSlotsViewOnSmallScreen: "true" }
-  });
-  Cal.ns["${site.booking.namespace}"]("ui", { hideEventTypeDetails: false, layout: "${site.booking.layout}" });`;
-
   return (
-    <Script id="aeoba-floating-booking" strategy="afterInteractive">
-      {floatingEmbed}
-    </Script>
+    <CalPopupButton className="floating-booking fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 bg-[#6366F1] hover:bg-[#4F46E5] text-[#FAFAFA] font-medium text-sm px-5 py-3 rounded-lg border border-white/10 shadow-xl transition-all focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6366F1]">
+      <CalendarDays size={16} aria-hidden="true" />
+      Book a Strategy Call
+    </CalPopupButton>
   );
 }
 
@@ -96,7 +76,7 @@ export function BookingCalendar() {
       />
       <p className="native-note">
         If the calendar is unavailable,{" "}
-        <Link href="/contact?subject=Strategy%20call">request a time directly from Sai</Link>.
+        <Link href="/contact?subject=Strategy%20call">request a time directly from Aeoba</Link>.
       </p>
     </>
   );

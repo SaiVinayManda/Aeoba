@@ -49,8 +49,6 @@
 .aeo-guaranteeClaim{gap:var(--space-3);color:var(--text);flex-direction:column;font-size:1.1875rem;font-weight:500;line-height:1.55;display:flex}
 .aeo-guaranteeClaim strong{color:var(--accent);font-variant-numeric:tabular-nums;font-size:3.5rem;font-weight:600;line-height:1.05}
 .aeo-guaranteeDetail{max-width:65ch;font-size:1rem}
-.aeo-founder{align-items:start;gap:var(--space-3);max-width:90ch;margin-top:var(--space-6);display:flex}
-.aeo-founder p{font-size:.875rem;line-height:1.65}
 .aeo-readingGrid{gap:var(--space-16);grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);display:grid}
 .aeo-readingGrid h2{text-wrap:balance}
 .aeo-readingBody{max-width:65ch;font-size:1.1875rem;line-height:1.65}

@@ -1,19 +1,19 @@
 import Link from "next/link";
-import { ArrowUpRight, Check, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Check } from "lucide-react";
 import { BookingLink } from "@/components/CalBooking";
 import { CitationPreview } from "@/components/interactive/CitationPreview";
 import { BuyerTabs } from "@/components/sites/aeoba/buyer-tabs";
 import { Pricing } from "@/components/sites/aeoba/pricing";
-import { CallToAction, ContentCard, FaqSection, FounderNote } from "@/components/aeoba/PageSections";
+import { CallToAction, ContentCard, FaqSection } from "@/components/aeoba/PageSections";
 import { playbooks } from "@/content/resources";
 import { faqSchema, site } from "@/config/site";
 
 function Hero() {
-  return <section id="hero" className="home-hero bg-instrument"><div className="home-hero-inner"><div className="home-hero-grid"><div><p className="eyebrow">Founder-led AEO / GEO / SEO</p><h1 className="home-hero-title"><span>The AI SEO agency that makes you the answer</span><span className="home-hero-emphasis">in AI Overviews, ChatGPT, and Google.</span></h1><p className="home-hero-guarantee">{site.guarantee}</p><div className="home-hero-actions"><Link className="btn-primary" href="/free-aeo-report">Run Your Free AEO Report</Link><BookingLink className="btn-secondary-strong">Book a Strategy Call</BookingLink></div><div className="home-founder-note"><ShieldCheck size={22} /><p><strong>{site.founder.name}</strong><span>{site.founder.expertise}</span><span>Milan, Italy · Sliema, Malta. You work directly with the architect.</span></p></div></div><CitationPreview /></div></div></section>;
+  return <section id="hero" className="home-hero bg-instrument"><div className="home-hero-inner"><div className="home-hero-grid"><div><p className="eyebrow">Agency-led AEO / GEO / SEO</p><h1 className="home-hero-title"><span>The AI SEO agency that makes you the answer</span><span className="home-hero-emphasis">in AI Overviews, ChatGPT, and Google.</span></h1><p className="home-hero-guarantee">{site.guarantee}</p><div className="home-hero-actions"><Link className="btn-primary" href="/free-aeo-report">Run Your Free AEO Report</Link><BookingLink className="btn-secondary-strong">Book a Strategy Call</BookingLink></div></div><CitationPreview /></div></div></section>;
 }
 
 function MarketStats() {
-  return <section id="stat-bar" className="aeo-statsSection" aria-label="The Aeoba operating model"><div className="aeo-inner"><div className="aeo-marketStats">{[["10", "buyer-intent prompts in the agreed citation target", "A measurable starting point"], ["90", "days in your initial execution term", "Baseline, ship, verify"], ["1", "founder responsible for your systems and delivery", "Direct access to Sai"], ["2", "European locations: Milan and Sliema", "One connected operating rhythm"]].map(([value, claim, note]) => <div className="aeo-marketStat" key={value}><p className="text-metric aeo-marketValue">{value}</p><p className="aeo-marketClaim">{claim}</p><p className="evidence-annotation aeo-marketSource">{note}</p></div>)}</div></div></section>;
+  return <section id="stat-bar" className="aeo-statsSection" aria-label="The Aeoba operating model"><div className="aeo-inner"><div className="aeo-marketStats">{[["10", "buyer-intent prompts in the agreed citation target", "A measurable starting point"], ["90", "days in your initial execution term", "Baseline, ship, verify"], ["1", "agency accountable for your systems and delivery", "Direct access to Aeoba"], ["2", "European locations: Milan and Sliema", "One connected operating rhythm"]].map(([value, claim, note]) => <div className="aeo-marketStat" key={value}><p className="text-metric aeo-marketValue">{value}</p><p className="aeo-marketClaim">{claim}</p><p className="evidence-annotation aeo-marketSource">{note}</p></div>)}</div></div></section>;
 }
 
 function Proof() {
@@ -25,7 +25,7 @@ function HowItWorks() {
 }
 
 function Governance() {
-  return <section className="aeo-section aeo-alternate"><div className="aeo-inner"><h2 className="text-heading-1 aeo-heading">You can inspect what you are paying for.</h2><ol className="aeo-governanceSteps">{["We plan the work", "You approve the priorities", "Sai owns the execution", "You review the evidence"].map((step, index) => <li key={step}><span className="aeo-stageMarker" /><span>{step}</span>{index < 3 && <span className="aeo-stageArrow" aria-hidden="true">→</span>}</li>)}</ol><div className="aeo-guarantee"><p className="aeo-guaranteeClaim"><strong>90 days.</strong><span>{site.guarantee}</span></p><div><p>{site.guaranteeTerms}</p><Link className="native-text-link" href="/pricing#guarantee">Read the guarantee terms →</Link></div></div><FounderNote /></div></section>;
+  return <section className="aeo-section aeo-alternate"><div className="aeo-inner"><h2 className="text-heading-1 aeo-heading">You can inspect what you are paying for.</h2><ol className="aeo-governanceSteps">{["We plan the work", "You approve the priorities", "Aeoba owns the execution", "You review the evidence"].map((step, index) => <li key={step}><span className="aeo-stageMarker" /><span>{step}</span>{index < 3 && <span className="aeo-stageArrow" aria-hidden="true">→</span>}</li>)}</ol><div className="aeo-guarantee"><p className="aeo-guaranteeClaim"><strong>90 days.</strong><span>{site.guarantee}</span></p><div><p>{site.guaranteeTerms}</p><Link className="native-text-link" href="/pricing#guarantee">Read the guarantee terms →</Link></div></div></div></section>;
 }
 
 function AnswerIndex() {

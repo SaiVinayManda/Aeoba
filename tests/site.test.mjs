@@ -30,9 +30,9 @@ test("every navigation item and legacy alias resolves to an explicit native rout
   assert.equal(bookingUrl, "/book-call"); assert.equal(new Set(publicRoutes).size, publicRoutes.length);
 });
 
-test("identity and JSON-LD share the configured founder, locations, email, and visible FAQs", () => {
-  assert.equal(site.name, "Aeoba"); assert.equal(site.founder.name, "Sai (Saivinay Manda)"); assert.equal(site.email, "saivinay0027@gmail.com");
-  assert.equal(organizationSchema.founder.name, site.founder.name); assert.equal(organizationSchema.location.length, 2);
+test("identity and JSON-LD share the agency brand, locations, email, and visible FAQs", () => {
+  assert.equal(site.name, "Aeoba"); assert.equal(site.email, "info@aeoba.com");
+  assert.equal(organizationSchema.name, site.name); assert.equal(organizationSchema.email, site.email); assert.ok(!JSON.stringify(organizationSchema).includes('"@type":"Person"')); assert.equal(organizationSchema.location.length, 2);
   assert.equal(organizationSchema.location[0].name, "Milan, Italy"); assert.equal(organizationSchema.location[1].name, "Sliema, Malta");
   for (const [index, item] of site.faq.entries()) { assert.equal(faqSchema.mainEntity[index].name, item.question); assert.equal(faqSchema.mainEntity[index].acceptedAnswer.text, item.answer); }
   assert.ok(site.guarantee.includes("10 buyer-intent prompts")); assert.ok(site.guaranteeTerms.includes("both ChatGPT and Perplexity"));

@@ -1,9 +1,9 @@
 {
-  "pages": 68,
-  "distinctNativeDestinations": 70,
-  "internalLinksAndSections": 160,
+  "pages": 75,
+  "distinctNativeDestinations": 77,
+  "internalLinksAndSections": 232,
   "aliases": 24,
-  "assets": 19,
+  "assets": 18,
   "publicReadinessFetch": "not requested",
   "verified": [
     "page identity and metadata",

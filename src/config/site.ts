@@ -4,8 +4,7 @@ const url = "https://aeoba.com";
 export const site = {
   name,
   url,
-  founder: { name: "Sai (Saivinay Manda)", role: "Founder / CEO", expertise: "AI & Robotics Engineer · Full-Stack Systems Architect" },
-  email: "saivinay0027@gmail.com",
+  email: "info@aeoba.com",
   locations: [
     { city: "Milan", country: "Italy", countryCode: "IT", label: "Milan, Italy" },
     { city: "Sliema", country: "Malta", countryCode: "MT", label: "Sliema, Malta" },
@@ -63,7 +62,6 @@ export const organizationSchema = {
   url: site.url,
   logo: `${site.url}${site.metadata.icon}`,
   email: site.email,
-  founder: { "@type": "Person", name: site.founder.name, jobTitle: site.founder.role },
   location: site.locations.map(location => ({
     "@type": "Place",
     name: location.label,

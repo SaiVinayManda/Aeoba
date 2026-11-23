@@ -26,7 +26,7 @@ try {
   for (let index = 0; index < routes.length; index += 6) {
     await Promise.all(routes.slice(index, index + 6).map(async route => {
       const html = await get(route);
-      assert.ok(html.includes("Aeoba"), `${route}: missing brand`); assert.ok(html.includes(site.founder.name), `${route}: missing founder`); assert.ok(html.includes(site.email), `${route}: missing contact`);
+      assert.ok(html.includes("Aeoba"), `${route}: missing brand`); assert.ok(html.includes(site.email), `${route}: missing contact`);
       assert.ok(html.includes("Milan, Italy") && html.includes("Sliema, Malta"), `${route}: missing locations`);
       assert.ok(/<title>[^<]*Aeoba/.test(html), `${route}: missing branded page title`);
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(item => JSON.parse(item[1]));
@@ -34,6 +34,7 @@ try {
       for (const match of html.matchAll(/<a\b[^>]*\bhref="([^"]*)"/g)) {
         const href = decode(match[1]);
         if (href.startsWith("mailto:")) { assert.equal(href, `mailto:${site.email}`); continue; }
+        if (href.startsWith("https://")) { assert.ok(route.startsWith("/resources/blog/") || route === "/resources/podcast", `${route}: unexpected external link`); continue; }
         assert.ok(href.startsWith("/") || href.startsWith("#"), `${route}: outbound or invalid link ${href}`);
         const destination = new URL(href, origin + route); assert.equal(destination.origin, origin); anchors.add(destination.pathname + destination.search + destination.hash);
       }

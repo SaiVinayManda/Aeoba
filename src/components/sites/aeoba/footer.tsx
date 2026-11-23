@@ -17,7 +17,7 @@ export function Footer() {
       <div className="aeo-footer-grid">
         <div className="aeo-footer-brand">
           <Link href="/" className="aeo-footer-logo" aria-label={`${site.name} home`}><AeobaLogo /></Link>
-          <p>Founder-led AEO, GEO, and SEO. Clear entities, useful answers, technical execution, and citation evidence—operated by the systems architect responsible for the work.</p>
+          <p>Agency-led AEO, GEO, and SEO. Clear entities, useful answers, technical execution, and citation evidence—managed by Aeoba.</p>
           <address>{site.locations.map(location => <span key={location.city}>{location.label}</span>)}</address>
         </div>
         <div><h4>Explore</h4><FooterLinks links={site.footerLinks} /></div>
@@ -25,7 +25,6 @@ export function Footer() {
         <div className="aeo-footer-contact">
           <h4>Contact</h4>
           <a className="aeo-footer-email" href={`mailto:${site.email}`}><Mail size={16} aria-hidden="true" />{site.email}</a>
-          <p>{site.founder.name} · {site.founder.role}</p>
           <CalPopupButton>Book a Strategy Call →</CalPopupButton>
           <Link href="/free-aeo-report">Free AEO Report →</Link>
           <Link href="/login">Client Portal →</Link>

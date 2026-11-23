@@ -1,6 +1,6 @@
 # Aeoba
 
-Founder-led AEO, GEO, and SEO by **Sai (Saivinay Manda)**, operating from **Milan, Italy** and **Sliema, Malta**. Contact: **saivinay0027@gmail.com**.
+Aeoba is an AEO, GEO, and SEO agency, operating from **Milan, Italy** and **Sliema, Malta**. Contact: **info@aeoba.com**.
 
 Next.js 16 App Router, React 19, TypeScript, Tailwind v4, and local Geist fonts. The header keeps its original desktop and mobile layout. All navigation, calls to action, resources, and onboarding destinations are native routes.
 
