@@ -1,5 +1,7 @@
 # Aeoba verification
 
+The latest technical SEO/AEO/GEO implementation and release checks are documented in [SEARCH-READINESS.md](SEARCH-READINESS.md). The sections below also retain earlier UI verification history.
+
 The automated production audit is summarized in [route-audit.json](route-audit.json). It starts an isolated server with temporary credentials and storage, validates native destinations and API behavior, then removes the test records.
 
 ## Automated checks

@@ -15,7 +15,7 @@ export interface Article {
   title: string;
   category: string;
   summary: string;
-  author: "Aeoba Research";
+  author: "Aeoba";
   publishedAt: string;
   modifiedAt: string;
   hook: string;
@@ -29,5 +29,5 @@ export type ArticleDraft = Omit<Article, "author" | "minutes">;
 
 export function finishArticle(article: ArticleDraft): Article {
   const words = [article.title, article.hook, ...article.sections.flatMap(section => [section.heading, ...section.paragraphs, ...(section.bullets ?? []), ...(section.subsections ?? []).flatMap(subsection => [subsection.heading, ...subsection.paragraphs, ...(subsection.bullets ?? [])]), ...(section.table?.rows.flat() ?? [])]), ...article.faq.flatMap(item => [item.question, item.answer])].join(" ").split(/\s+/).length;
-  return { ...article, author: "Aeoba Research", minutes: Math.max(1, Math.ceil(words / 200)) };
+  return { ...article, author: "Aeoba", minutes: Math.max(1, Math.ceil(words / 200)) };
 }

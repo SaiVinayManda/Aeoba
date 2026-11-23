@@ -13,7 +13,9 @@ export const site = {
   metadata: {
     title: `The AI SEO Agency That Wins Brands AI Citations | ${name}`,
     description: `${name} is the AI SEO agency for the answer era, managed technical SEO, schema, content, and authority systems that win Google rankings and AI citations in ChatGPT, Perplexity, and AI Overviews.`,
-    icon: "/aeoba-mark.svg",
+    icon: "/favicon.ico",
+    logo: "/logo.png",
+    socialImage: "/og-image.png",
   },
   booking: {
     // The local booking page embeds this one editable Aeoba scheduling link.
@@ -54,13 +56,36 @@ export const bookingUrl = "/book-call";
 
 export const reportUrl = "/free-aeo-report";
 
+export const organizationLogo = {
+  "@type": "ImageObject",
+  "@id": `${site.url}/#logo`,
+  url: `${site.url}${site.metadata.logo}`,
+  contentUrl: `${site.url}${site.metadata.logo}`,
+  width: 512,
+  height: 512,
+  caption: site.name,
+};
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  url: site.url,
+  name: site.name,
+  alternateName: "Aeoba AI SEO Agency",
+  publisher: { "@id": `${site.url}/#organization` },
+  inLanguage: "en",
+};
+
 export const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   "@id": `${site.url}/#organization`,
   name: site.name,
   url: site.url,
-  logo: `${site.url}${site.metadata.icon}`,
+  logo: organizationLogo,
+  image: `${site.url}${site.metadata.logo}`,
+  description: "B2B Answer Engine Optimization, Generative Engine Optimization, and technical SEO agency based in Milan, Italy and Sliema, Malta.",
   email: site.email,
   location: site.locations.map(location => ({
     "@type": "Place",

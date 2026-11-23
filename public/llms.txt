@@ -1,0 +1,97 @@
+# Aeoba
+
+> Aeoba is a B2B Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and Technical SEO agency based in Milan, Italy and Sliema, Malta. Website: https://aeoba.com. Contact: info@aeoba.com.
+
+Aeoba is the agency entity and publisher. Our work connects buyer-intent questions, technical access, schema and entity engineering, evidence-led content, relevant external references, and dated citation measurement.
+
+Implementation studies are illustrative workflows, not achieved client performance claims. Tool outputs are user-supplied scenarios or actual public-HTML checks, not independent verification of AI recommendations. Mentions, citations, referral visits, and qualified pipeline are distinct observations.
+
+## Service plans and deliverables
+
+- **Growth: $1,597/mo**. A managed program for one site and a focused set of commercial priorities. Technical and entity baseline for one website; 8 high-intent answer-engine pages per month with supporting media; 3–5 targeted brand mentions per month across Reddit, Quora, and industry best-of listicles, subject to editorial and community approval; Buyer-intent prompt mapping and weekly citation reporting.
+- **Scale: $2,997/mo**. A broader managed program for a larger answer library and a wider set of buyer questions. Full-site technical and entity optimization; 15 high-intent answer-engine pages per month with supporting media; 5–8 relevant brand mentions per month, subject to editorial and community approval; Expanded buyer-intent prompt coverage and weekly citation reporting.
+- **Enterprise: Custom**. An agency-led program scoped around your category, systems, and competitive requirements. Direct strategy and architecture with Aeoba; A custom prompt, entity, and measurement program; Content, technical, and authority work agreed at kickoff; Monthly strategy reviews and an inspectable delivery record.
+
+Growth and Scale deliver 8–15 high-intent answer-engine pages/month and 3–8 targeted brand mentions/month across Reddit, Quora, and industry "Best Of" listicles, subject to fit, disclosure, and editorial/community approval. Programs include schema and entity engineering. Enterprise scope is agreed individually.
+
+## 90-day citation guarantee
+
+Ranked and cited in ChatGPT & Perplexity for at least 10 buyer-intent prompts in 90 days—or we keep working free until you are.
+
+We agree on at least 10 relevant buyer-intent prompts at kickoff and record a dated baseline. A qualifying result is a named brand recommendation with a verifiable citation in both ChatGPT and Perplexity for each agreed prompt. The initial term is 90 days. You provide agreed access and approvals; if the agreed citation target is not met, our management work continues free until it is. You keep every page, schema update, and asset we ship.
+
+## Services
+
+- [Managed AEO + SEO](https://aeoba.com/services/managed-aeo): One agency-led operating system for technical search, buyer-led content, entities, and citation measurement.
+- [Technical AEO · Schema + Entity](https://aeoba.com/services/technical-aeo): Make your business, products, and expertise understandable to crawlers, search engines, and answer systems.
+- [AI Search Analytics](https://aeoba.com/services/ai-search-analytics): Build a repeatable record of the questions buyers ask and the sources AI answers actually use.
+- [AI Visibility Recovery](https://aeoba.com/services/ai-visibility-recovery): Investigate a citation loss or search decline and turn the evidence into a focused repair plan.
+- [Authority & Community Mentions](https://aeoba.com/services/authority-community-mentions): Build useful references in relevant publications, category resources, and communities that your buyers trust.
+
+## Tools and workflows
+
+- [Brand Intelligence](https://aeoba.com/platform/brand-intelligence): Find out which version of your brand a buyer encounters in an AI answer. Build a consistent entity record before you try to increase your exposure.
+- [AI Search Tracking](https://aeoba.com/platform/ai-search-tracking): Track a stable set of buyer questions across ChatGPT and Perplexity. Keep the answer, the date, and the citation together so a change is reviewable.
+- [SEO Reporting](https://aeoba.com/platform/seo-reporting): See what shipped, what became discoverable, and what changed in search. A useful report connects work with evidence and the next decision.
+- [Website Visitor Tracking](https://aeoba.com/platform/website-visitor-tracking): Understand the journeys behind qualified enquiries with consent-aware event planning and clear source attribution.
+- [Social Listening](https://aeoba.com/platform/social-listening): Turn public customer questions and recurring objections into a useful answer backlog, with the source and context attached.
+- [AI Blog Writer](https://aeoba.com/platform/ai-blog-writer): Start with a precise buyer question, a useful answer structure, and an evidence plan. Automation supports the draft; editorial judgment owns the claim.
+- [Trend Discovery](https://aeoba.com/platform/trend-discovery): Spot emerging questions in customer conversations and category changes, then decide whether they deserve a durable page or a timely update.
+- [AI Podcast Automation](https://aeoba.com/platform/ai-podcast-automation): Build a repeatable production plan for useful expert conversations, readable transcripts, and supporting answer pages.
+- [On-Page SEO Automation](https://aeoba.com/platform/on-page-seo-automation): Apply consistent technical checks to the pages that matter, with human review before changes reach production.
+- [Internal Linking](https://aeoba.com/platform/internal-linking): Give buyers and crawlers a clear path from their first question to the commercial page that resolves it.
+- [Bulk Indexing](https://aeoba.com/platform/bulk-indexing): Prepare batches of approved pages for discovery through sound crawlability, canonicalization, and sitemap hygiene.
+- [Link Building](https://aeoba.com/platform/link-building): Earn references that make sense to a real buyer: relevant publications, useful resources, and evidence worth citing.
+- [Reddit & Quora Seeding](https://aeoba.com/platform/reddit-quora-seeding): Participate where buyers already ask questions, with useful answers and clear disclosure of any relationship to your brand.
+- [Parasite SEO](https://aeoba.com/platform/parasite-seo): Place useful expertise on relevant third-party publications while keeping authorship, attribution, and editorial control clear.
+- [AEO ROI Calculator](https://aeoba.com/resources/tools/aeo-roi-calculator): Model potential demand, qualified opportunities, and pipeline using explicit assumptions you control.
+- [AI Visibility Readiness Checker](https://aeoba.com/resources/tools/ai-visibility-checker): Fetch a public homepage and inspect real technical signals. Engine citations still require actual answer checks.
+- [GEO Technical Audit](https://aeoba.com/resources/tools/geo-audit): Check the HTML foundations behind a useful generative-search baseline and connect the findings to a prompt plan.
+
+## Guides and research
+
+- [Glossary](https://aeoba.com/resources/glossary): Clear definitions of answer-engine, technical-search, and citation-measurement terminology.
+- [Free AEO Field Guide](https://aeoba.com/resources/free-aeo-guide): Seven chapters on prompts, technical foundations, answers, schema, authority, and measurement.
+- [Answer Index](https://aeoba.com/answer-index): Record buyer prompts, AI answer excerpts, and source evidence on your device.
+- [Build a buyer-intent prompt map before publishing another page](https://aeoba.com/resources/blog/build-a-buyer-intent-prompt-map): A practical way to connect customer questions, commercial pages, and the evidence an AI answer would need.
+- [Useful schema starts with consistent facts](https://aeoba.com/resources/blog/schema-without-contradictions): How to align organization entities, canonical URLs, and visible answers before adding structured data.
+- [A citation report should let you inspect the evidence](https://aeoba.com/resources/blog/measure-citations-with-evidence): Separate mentions, citations, visits, and pipeline so your weekly report supports a decision.
+- [Build authority without manufacturing endorsements](https://aeoba.com/resources/blog/authority-without-manufactured-endorsements): A practical editorial approach to relevant publications, public communities, and useful third-party references.
+- [60% of Searches End Without a Click—How B2B Brands Win the Citation Anyway](https://aeoba.com/resources/blog/zero-click-search-b2b-aeo-citations): Build a B2B zero-click search strategy that earns useful AI citations, protects demand capture, and connects Answer Engine Optimization to pipeline.
+- [Why ChatGPT Recommends Your Competitor Instead of You (And How to Fix It in 90 Days)](https://aeoba.com/resources/blog/rank-in-chatgpt-90-day-brand-visibility): Diagnose missing ChatGPT brand mentions with a 90-day plan for technical access, buyer-fit pages, independent evidence, and repeatable citation checks.
+- [AEO vs. GEO vs. Traditional SEO: What Actually Moves Pipeline in 2026](https://aeoba.com/resources/blog/aeo-vs-geo-vs-seo-pipeline-2026): Understand the difference between AEO, GEO, and SEO, then prioritize shared technical, content, and measurement work around qualified B2B demand.
+- [The Exact Schema & Entity Blueprint LLMs Use to Verify Your Brand](https://aeoba.com/resources/blog/technical-aeo-schema-entity-blueprint): A practical technical AEO blueprint for Organization, Service, and article schema, stable entity identifiers, visible facts, and structured-data validation.
+- [Why Reddit and 'Best Of' Listicles Matter More Than Backlinks for Perplexity Rankings](https://aeoba.com/resources/blog/perplexity-seo-reddit-listicles-citation-signals): Build a Perplexity SEO strategy around observed source relevance, useful community participation, and accurate comparison coverage instead of chasing link counts.
+- [How to Track AI Search Visibility When Google Search Console Shows Zero Clicks](https://aeoba.com/resources/blog/track-ai-search-visibility-attribution): Track AI brand mentions, citations, referrals, and qualified pipeline with a stable prompt panel, clear denominators, and an honest attribution framework.
+- [The 90-Day Answer Engine Playbook for B2B SaaS and Service Companies](https://aeoba.com/resources/blog/90-day-answer-engine-playbook-b2b): A 90-day B2B AEO implementation guide covering buyer prompts, technical repairs, answer pages, external evidence, ownership, and citation measurement.
+
+## Industries and implementation studies
+
+- [AEO & SEO for Law Firms](https://aeoba.com/industries/law-firm-seo): Make practice areas, jurisdictions, lawyer credentials, and consultation paths clear before a prospective client reaches out.
+- [AEO & SEO for Senior Living](https://aeoba.com/industries/senior-living): Help families compare services, location, suitability, and next steps with specific, accessible information.
+- [AEO & SEO for Healthcare](https://aeoba.com/industries/healthcare-seo): Build discoverable provider and service information with named reviewers, clear boundaries, and current contact details.
+- [AEO & SEO for Finance](https://aeoba.com/industries/finance-seo): Make service scope, qualifications, fees, and decision criteria clear without promising returns or presenting general content as personal advice.
+- [AEO & SEO for Hospitality](https://aeoba.com/industries/hospitality-seo): Connect specific guest questions with accurate amenities, location details, policies, and booking information.
+- [AEO & SEO for Real Estate](https://aeoba.com/industries/real-estate-seo): Build a useful local knowledge base with clear areas served, property expertise, and an easy way to speak to the right person.
+- [AEO & SEO for Local Businesses](https://aeoba.com/industries/local-business-seo): Make the service, area, opening information, and proof of expertise consistent across your owned pages.
+- [AEO & SEO for Manufacturing](https://aeoba.com/industries/manufacturing-seo): Make capabilities, tolerances, certifications, and enquiry requirements easier for a technical buyer to inspect.
+- [AEO & SEO for B2B SaaS](https://aeoba.com/industries/saas): Be understandable at the moment a buyer compares solutions, integrations, constraints, and implementation effort.
+- [AEO & SEO for Ecommerce](https://aeoba.com/industries/ecommerce): Connect product facts, category expertise, and useful buying advice so a shopper can make a confident choice.
+- [A citation architecture for B2B SaaS](https://aeoba.com/case-studies/saas-citation-architecture): An illustrative implementation showing how use cases, integrations, and comparison pages can support buyer questions.
+- [An answer library for considered purchases](https://aeoba.com/case-studies/ecommerce-answer-library): An illustrative product discovery workflow built around suitability, buying criteria, and clear product facts.
+- [An entity baseline for professional services](https://aeoba.com/case-studies/professional-services-entity-baseline): An illustrative workflow for consistent services, locations, expertise, and consultation paths.
+
+## Agency and contact
+
+- [Pricing](https://aeoba.com/pricing): Growth, Scale, and Enterprise scopes, monthly pricing, and the 90-day citation commitment.
+- [About Aeoba](https://aeoba.com/about): Aeoba's agency operating model and locations in Milan, Italy and Sliema, Malta.
+- [Contact Aeoba](https://aeoba.com/contact): Contact info@aeoba.com or send a scoped agency enquiry.
+- [Free AEO Report](https://aeoba.com/free-aeo-report): Request an AEO report using your website and real buyer questions.
+- [Book a Strategy Call](https://aeoba.com/book-call): Choose a time in Aeoba's embedded strategy-call calendar.
+- [Privacy](https://aeoba.com/privacy): How Aeoba handles enquiries, local tool data, scheduling, and website checks.
+- [Website Terms](https://aeoba.com/terms): Website resources, service onboarding, access responsibilities, and guarantee terms.
+
+## Optional
+
+- [Full reference](https://aeoba.com/llms-full.txt): Expanded service explanations, complete research articles, guide chapters, and glossary definitions.
+- [XML sitemap](https://aeoba.com/sitemap.xml): Canonical public URLs and editorial modification dates.

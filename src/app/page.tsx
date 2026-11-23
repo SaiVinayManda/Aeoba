@@ -6,7 +6,7 @@ import { BuyerTabs } from "@/components/sites/aeoba/buyer-tabs";
 import { Pricing } from "@/components/sites/aeoba/pricing";
 import { CallToAction, ContentCard, FaqSection } from "@/components/aeoba/PageSections";
 import { playbooks } from "@/content/resources";
-import { faqSchema, site } from "@/config/site";
+import { site } from "@/config/site";
 
 function Hero() {
   return <section id="hero" className="home-hero bg-instrument"><div className="home-hero-inner"><div className="home-hero-grid"><div><p className="eyebrow">Agency-led AEO / GEO / SEO</p><h1 className="home-hero-title"><span>The AI SEO agency that makes you the answer</span><span className="home-hero-emphasis">in AI Overviews, ChatGPT, and Google.</span></h1><p className="home-hero-guarantee">{site.guarantee}</p><div className="home-hero-actions"><Link className="btn-primary" href="/free-aeo-report">Run Your Free AEO Report</Link><BookingLink className="btn-secondary-strong">Book a Strategy Call</BookingLink></div></div><CitationPreview /></div></div></section>;
@@ -33,5 +33,5 @@ function AnswerIndex() {
 }
 
 export default function Home() {
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} /><Hero /><MarketStats /><Proof /><HowItWorks /><BuyerTabs /><Governance /><AnswerIndex /><Pricing /><section id="what-is-aeo" className="aeo-section"><div className="aeo-inner aeo-readingGrid"><h2 className="text-heading-1">What is Answer Engine Optimization?</h2><div><p className="aeo-readingBody">AEO makes your expertise easier to understand, verify, and reference in an AI answer. Aeoba connects technical SEO, clear entities, useful content, and relevant authority signals with the questions your buyers actually ask.</p><div className="aeo-readingActions"><Link href="/resources/free-aeo-guide">Read the Aeoba AEO guide<ArrowUpRight size={18} /></Link><Link href="/resources/tools/aeo-roi-calculator">Explore potential demand<ArrowUpRight size={18} /></Link></div></div></div></section><FaqSection /><CallToAction /></>;
+  return <><Hero /><MarketStats /><Proof /><HowItWorks /><BuyerTabs /><Governance /><AnswerIndex /><Pricing /><section id="what-is-aeo" className="aeo-section"><div className="aeo-inner aeo-readingGrid"><h2 className="text-heading-1">What is Answer Engine Optimization?</h2><div><p className="aeo-readingBody">AEO makes your expertise easier to understand, verify, and reference in an AI answer. Aeoba connects technical SEO, clear entities, useful content, and relevant authority signals with the questions your buyers actually ask.</p><div className="aeo-readingActions"><Link href="/resources/free-aeo-guide">Read the Aeoba AEO guide<ArrowUpRight size={18} /></Link><Link href="/resources/tools/aeo-roi-calculator">Explore potential demand<ArrowUpRight size={18} /></Link></div></div></div></section><FaqSection /><CallToAction /></>;
 }

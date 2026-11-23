@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Check, Download, Volume2, Square } from "lucide-react";
-import { articles, podcastArticles, glossary, guideChapters } from "@/content/resources";
+import { articles, podcastArticles, guideChapters } from "@/content/resources";
+import { glossaryEntries } from "@/content/glossary";
 import { downloadFile } from "@/components/interactive/Workbenches";
 
 export function ArticleLibrary() {
@@ -15,8 +16,8 @@ export function ArticleLibrary() {
 
 export function GlossarySearch() {
   const [query, setQuery] = useState("");
-  const terms = glossary.filter(term => term.join(" ").toLowerCase().includes(query.toLowerCase()));
-  return <><label className="search-field">Search the glossary<input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Citation, entity, canonical…" /></label><p className="native-note" aria-live="polite">{terms.length} terms</p><div className="glossary-list">{terms.map(([short, title, definition]) => <details key={short} id={short.toLowerCase().replaceAll(" ", "-")}><summary>{title}{short !== title && ` · ${short}`}</summary><p>{definition}</p><Link className="native-text-link" href="/resources/free-aeo-guide">Put this into practice →</Link></details>)}</div>{!terms.length && <p className="empty-state">No terms match this search.</p>}</>;
+  const terms = glossaryEntries.filter(term => `${term.short} ${term.title} ${term.definition}`.toLowerCase().includes(query.toLowerCase()));
+  return <><label className="search-field">Search the glossary<input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Citation, entity, canonical…" /></label><p className="native-note" aria-live="polite">{terms.length} terms</p><div className="glossary-list">{terms.map(({ short, title, definition, slug }) => <details key={short} id={short.toLowerCase().replaceAll(" ", "-")}><summary>{title}{short !== title && ` · ${short}`}</summary><dl><dt>{title}</dt><dd><p>{definition}</p></dd></dl><Link className="native-text-link" href={`/resources/glossary/${slug}`}>Read the complete definition</Link><Link className="native-text-link" href="/resources/free-aeo-guide">Put this into practice →</Link></details>)}</div>{!terms.length && <p className="empty-state">No terms match this search.</p>}</>;
 }
 
 export function GuideNavigator() {

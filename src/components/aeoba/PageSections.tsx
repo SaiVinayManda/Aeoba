@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 import { CalPopupButton } from "@/components/CalBooking";
 import { site } from "@/config/site";
+import { JsonLd } from "./StructuredData";
+import { faqPageSchema } from "@/lib/structured-data";
 
 export function PageHero({ eyebrow, title, description, parent, actions = true }: { eyebrow: string; title: string; description: string; parent?: { label: string; href: string }; actions?: boolean }) {
   return <section className="native-hero"><div className="native-container">
@@ -27,6 +29,6 @@ export function CallToAction() {
   return <section className="native-section native-cta"><div className="native-container"><p className="eyebrow">Your next step</p><h2>Find the gap between your expertise and your AI visibility.</h2><p>Start with your website and the questions you want to be recommended for. Build the program around evidence.</p><div className="native-actions"><Link className="btn-primary" href="/free-aeo-report">Run Your Free AEO Report</Link><CalPopupButton className="btn-secondary-strong">Book a Strategy Call</CalPopupButton></div></div></section>;
 }
 
-export function FaqSection() {
-  return <PageSection id="faq" eyebrow="Clear answers" title="Before we get started"><div className="native-faq">{site.faq.map(item => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div></PageSection>;
+export function FaqSection({ path = "/" }: { path?: string }) {
+  return <PageSection id="faq" eyebrow="Clear answers" title="Before we get started"><JsonLd value={faqPageSchema(path, site.faq)} /><div className="native-faq">{site.faq.map(item => <details key={item.question}><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div></PageSection>;
 }

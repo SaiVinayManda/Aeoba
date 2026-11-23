@@ -25,7 +25,9 @@
     "check": "npm run lint && npm run typecheck && npm run build",
     "test": "node --test tests/*.test.mjs",
     "audit:routes": "node scripts/audit-routes.mjs",
-    "audit:brand": "node scripts/audit-brand.mjs"
+    "audit:brand": "node scripts/audit-brand.mjs",
+    "generate:seo": "node scripts/generate-search-assets.mjs && node scripts/generate-llms.mjs",
+    "prebuild": "npm run generate:seo"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -47,6 +49,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "sharp": "0.35.4",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

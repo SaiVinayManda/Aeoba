@@ -14,7 +14,7 @@ test("all articles have brand authorship, hooks, FAQs, service links, and report
   assert.equal(podcastArticles.length, 4);
   assert.equal(new Set(articles.map(article => article.slug)).size, articles.length);
   for (const article of articles) {
-    assert.equal(article.author, "Aeoba Research");
+    assert.equal(article.author, "Aeoba");
     assert.ok(article.hook.length > 80, article.slug);
     assert.ok(article.faq.length >= 3, article.slug);
     assert.ok(article.sections.some(section => section.subsections?.length), article.slug);
@@ -44,12 +44,14 @@ test("article metadata and JSON-LD agree with visible authorship, canonical URLs
     const schema = JSON.parse(JSON.stringify(articleSchema(article)));
     const [post, faq] = schema["@graph"];
     assert.equal(metadata.authors[0].name, article.author);
-    assert.equal(metadata.alternates.canonical, `/resources/blog/${article.slug}`);
+    assert.equal(metadata.alternates.canonical, `https://aeoba.com/resources/blog/${article.slug}`);
     assert.equal(metadata.openGraph.type, "article");
     assert.equal(metadata.openGraph.publishedTime, article.publishedAt);
     assert.equal(post["@type"], "BlogPosting");
     assert.equal(post.author["@type"], "Organization");
     assert.equal(post.author.name, article.author);
+    assert.equal(post.publisher.name, "Aeoba");
+    assert.equal(post.publisher.logo.url, "https://aeoba.com/logo.png");
     assert.equal(post.headline, article.title);
     assert.equal(post.dateModified, article.modifiedAt);
     assert.equal(faq["@type"], "FAQPage");

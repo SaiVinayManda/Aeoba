@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CallToAction, PageHero, PageSection } from "@/components/aeoba/PageSections";
 import { ArticleContent, ArticleText } from "@/components/aeoba/ArticleContent";
 import { articles } from "@/content/resources";
+import { blogAnswers } from "@/content/seo-answers";
 import { articleMetadata, articleSchema } from "@/lib/articles";
 export const dynamicParams = false;
 export function generateStaticParams() { return articles.map(article => ({ slug: article.slug })); }
@@ -20,6 +21,7 @@ export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = articles.find(item => item.slug === slug);
   if (!article) notFound();
+  const directAnswer = blogAnswers[article.slug];
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema(article)).replace(/</g, "\\u003c") }} />
     <PageHero eyebrow={article.category} title={article.title} description={article.summary} parent={{ label: "Blog", href: "/resources/blog" }} actions={false} />
@@ -37,6 +39,7 @@ export default async function ArticlePage({ params }: Props) {
       </aside>
       <article className="article-body blog-article">
         <p className="article-hook"><ArticleText text={article.hook} /></p>
+        <section id="direct-answer"><h2>{directAnswer.question}</h2><p>{directAnswer.answer}</p></section>
         {article.sections.map((section, index) => <ArticleContent section={section} id={`section-${index + 1}`} key={section.heading} />)}
         <section id="faq">
           <h2>Frequently asked questions</h2>
