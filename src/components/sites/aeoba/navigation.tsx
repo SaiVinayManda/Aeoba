@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUp, ChevronDown, Menu, X } from "lucide-react";
 import { AeobaLogo } from "@/components/AeobaLogo";
-import { BookingLink, CalPopupButton } from "@/components/CalBooking";
+import { CalPopupButton } from "@/components/CalBooking";
 import { navigationMenus as menus, type NavGroup, type NavMenu } from "@/config/navigation";
 
 function MenuGroups({ groups, onNavigate }: { groups: NavGroup[]; onNavigate: () => void }) {

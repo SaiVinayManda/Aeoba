@@ -4,8 +4,17 @@ import sharp from "sharp";
 
 const root = path.resolve(import.meta.dirname, "..");
 const publicDir = path.join(root, "public");
-const mark = `<defs><mask id="aeoba-weave-mask"><rect width="320" height="320" fill="white"/><path d="M 92 178 C 120 198, 165 170, 218 158" stroke="black" stroke-width="19" stroke-linecap="round"/><path d="M 225 162 C 205 178, 175 180, 152 174" stroke="black" stroke-width="19" stroke-linecap="round"/></mask></defs><g mask="url(#aeoba-weave-mask)" stroke="#FAFAFA" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M 96 268 C 118 205, 138 66, 160 66 C 182 66, 206 205, 226 268"/><path d="M 110 268 C 130 212, 148 92, 161 92 C 174 92, 194 212, 212 268"/><path d="M 96 268 L 110 268" stroke-width="10"/><path d="M 212 268 C 218 273, 224 273, 226 268" stroke-width="9"/></g><path d="M 118 168 C 94 166, 94 184, 118 188 C 148 193, 186 154, 214 152 C 230 151, 232 164, 212 171 C 188 179, 148 169, 118 168 Z" stroke="#6366F1" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>`;
-const badge = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="512" height="512" fill="none"><rect width="320" height="320" rx="64" fill="#09090D"/>${mark}</svg>`;
+const markSvg = await fs.readFile(path.join(publicDir, "aeoba-mark.svg"), "utf8");
+const pathMatch = markSvg.match(/<path[\s\S]+?\/>/);
+if (!pathMatch) throw new Error("Failed to extract path from aeoba-mark.svg");
+const pathTag = pathMatch[0];
+
+const badge = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" fill="none">
+  <rect width="512" height="512" rx="104" fill="#09090D"/>
+  <svg x="64" y="64" width="384" height="384" viewBox="0 0 472 430">
+    ${pathTag}
+  </svg>
+</svg>`;
 
 await fs.mkdir(publicDir, { recursive: true });
 await fs.writeFile(path.join(publicDir, "logo.svg"), badge + "\n");
